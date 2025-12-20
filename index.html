@@ -1,436 +1,740 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./images/title.png" type="image/png">
-    <title>Foodie</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="./images/title.png" type="image/png">
+        <title>Foodie</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="index.css">
+    </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <div class="navbar-brand d-flex align-items-center gap-2">
-                <!-- shows only in mobile -->
-                <div class="d-block d-sm-none text-center p-3">
-                    <h1>
-                        Hello <span style="color: rgb(218, 33, 218);">Priya Mam</span>
-                    </h1>
-                    <ul class="navbar-nav mt-2">
-                        <li class="nav-item dropdown">
-                            <button class="btn btn-light border dropdown-toggle d-flex align-items-center" type="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <div class="navbar-brand d-flex align-items-center gap-2">
+                    <!-- shows only in mobile -->
+                    <div class="d-block d-sm-none text-center p-3">
+                        <h1>
+                            Hello <span style="color: rgb(218, 33, 218);">Priya Mam</span>
+                        </h1>
+                        <ul class="navbar-nav mt-2">
+                            <li class="nav-item dropdown">
+                                <button class="btn btn-light border dropdown-toggle d-flex align-items-center" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
+                                    </svg>
+                                    <span style="color: rgb(60, 2, 60);">Coimbatore</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Dharmapuri</a></li>
+                                    <li><a class="dropdown-item" href="#">Salem</a></li>
+                                    <li><a class="dropdown-item" href="#">Hosur</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="./images/logo.png" height="40" class="rounded d-none d-sm-block" alt="logo">
+                </div>
+                <div class="d-flex flex-column align-items-center d-sm-block">
+                    <!-- Cart Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                        class="bi bi-cart2 mb-2 d-lg-none" viewBox="0 0 16 16">
+                        <path
+                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
+                    </svg>
+
+                    <!-- Toggle Button -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                </div>
+                
+                <nav class="collapse d-lg-none" id="navbarContent">
+                    <ul class="navbar-nav ms-auto gap-2 ">
+                        <li class="nav-item nav-link border border-black text-center" id="sort">
+                            Sort
+                        </li>
+                        <li class="nav-item nav-link border border-black text-center" id="rat">
+                            Ratings
+                        </li>
+                        <li class="nav-item nav-link border border-black text-center" id="cost">
+                            Cost Per Persons
+                        </li>
+                        <li class="nav-item nav-link border border-black text-center" id="order">
+                            Order Type
+                        </li>
+                    </ul>
+                </nav>
+            
+
+
+
+
+
+                <div class="collapse navbar-collapse">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-3 text-sm-center gap-sm-4">
+                        <li class="nav-item dropdown d-none d-sm-block">
+                            <button class="btn btn-light border dropdown-toggle" data-bs-toggle="dropdown">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                                     <path
                                         d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-                                </svg>
-                                <span style="color: rgb(60, 2, 60);">Coimbatore</span>
+                                </svg>Coimbatore
                             </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Dharmapuri</a></li>
-                                <li><a class="dropdown-item" href="#">Salem</a></li>
-                                <li><a class="dropdown-item" href="#">Hosur</a></li>
+                            <ul class="dropdown-menu align-items-center">
+                                <li><a class="dropdown-item text-sm-center" href="#">Dharmapuri</a></li>
+                                <li><a class="dropdown-item text-sm-center" href="#">Salem</a></li>
+                                <li><a class="dropdown-item text-sm-center" href="#">Hosur</a></li>
                             </ul>
                         </li>
                     </ul>
-                </div>
-                <img src="./images/logo.png" height="40" class="rounded d-none d-sm-block" alt="logo">
-            </div>
-            <div class="d-flex flex-column align-items-center d-sm-block">
-                <!-- Cart Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
-                    class="bi bi-cart2 mb-2 d-lg-none" viewBox="0 0 16 16">
-                    <path
-                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0" />
-                </svg>
 
-                <!-- Toggle Button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-
-
-            <div class="collapse navbar-collapse" id="navbarContent">
-
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-3 text-sm-center gap-sm-4">
-                    <li class="nav-item dropdown d-none d-sm-block">
-                        <button class="btn btn-light border dropdown-toggle" data-bs-toggle="dropdown">
+                    <ul class="navbar-nav ms-auto d-flex align-items-center gap-4 gap-lg-4 gap-sm-4">
+                        <li class="nav-item p-sm-1 border-sm-2">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                class="bi bi-search" viewBox="0 0 16 16">
                                 <path
-                                    d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
-                            </svg>Coimbatore
-                        </button>
-                        <ul class="dropdown-menu align-items-center">
-                            <li><a class="dropdown-item text-sm-center" href="#">Dharmapuri</a></li>
-                            <li><a class="dropdown-item text-sm-center" href="#">Salem</a></li>
-                            <li><a class="dropdown-item text-sm-center" href="#">Hosur</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg> Search
+                        </li>
 
-                <ul class="navbar-nav ms-auto d-flex align-items-center gap-4 gap-lg-4 gap-sm-4">
-                    <li class="nav-item p-sm-1 border-sm-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-search" viewBox="0 0 16 16">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                        </svg> Search
-                    </li>
+                        <li class="nav-item dropdown">
+                            <button class="btn btn-light border dropdown-toggle" data-bs-toggle="dropdown">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-translate" viewBox="0 0 16 16">
+                                    <path
+                                        d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z" />
+                                    <path
+                                        d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31" />
+                                </svg> Eng
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Tam</a></li>
+                            </ul>
+                        </li>
 
-                    <li class="nav-item dropdown">
-                        <button class="btn btn-light border dropdown-toggle" data-bs-toggle="dropdown">
+                        <li class="nav-item">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-translate" viewBox="0 0 16 16">
+                                class="bi bi-bag-plus" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5" />
                                 <path
-                                    d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z" />
-                                <path
-                                    d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31" />
-                            </svg> Eng
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Tam</a></li>
-                        </ul>
-                    </li>
+                                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+                            </svg>
+                        </li>
 
-                    <li class="nav-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-bag-plus" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5" />
-                            <path
-                                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
-                        </svg>
-                    </li>
-
-                    <li class="nav-item">
-                        <button class="btn text-light px-3" style="background-color: rgb(70,7,70);">
-                            Login
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- Mobile-only inputs in a row -->
-        <div class="d-block d-sm-none p-3 d-flex gap-1">
-            <input type="text" class="form-control rounded-5 w-75 bg-body-secondary" placeholder="Search Food">
-            <input type="text" class="form-control rounded-5 w-25 bg-body-secondary" placeholder="City">
-        </div>
-
-
-    </nav>
-    <!-- sidebar container -->
-    <div class="container">
-        <div class="row gap-4">
-            <div class="col-3 border p-4 d-none d-sm-block">
-                <h1 class="fs-2 fs-sm-3 fs-md-2">Cuisines</h1>
-                <input type="text" placeholder="Search for cuisines"
-                    class="form-control mb-4 bg-body-secondary border-0">
-                <ul class="navbar-nav mt-3 gap-3">
-                    <li class="nav-item">
-                        <img src="./images/beverages.jpg" height="50px" width="50px" class="rounded-5 p-1"
-                            alt="food1">Berverages
-                    </li>
-                    <li class="nav-item">
-                        <img src="./images/pizza.jpg" height="50px" width="50px" class="rounded-5 p-1" alt="food1">
-                        Pizza
-                    </li>
-                    <li class="nav-item">
-                        <img src="./images/chinese.avif" height="50px" width="50px" class="rounded-5 p-1"
-                            alt="food1">Chinese
-                    </li>
-                    <li class="nav-item">
-                        <img src="./images/europian.avif" height="50px" width="50px" class="rounded-5 p-1"
-                            alt="food1">Europian
-                    </li>
-                    <li class="nav-item">
-                        <img src="./images/french.webp" height="50px" width="50px" class="rounded-5 p-1"
-                            alt="food1">French
-                    </li>
-                    <li class="nav-item">
-                        <img src="./images/burger.webp" height="50px" width="50px" class="rounded-5 p-1"
-                            alt="food1">Burger
-                    </li>
-                    <li class="nav-item">
-                        <img src="./images/lebanese.jpg" height="50px" width="50px" class="rounded-5 p-1"
-                            alt="food1">Lebanese
-                    </li>
-                    <li class="nav-item">
-                        <img src="./images/mexian.avif" height="50px" width="50px" class="rounded-5 p-1"
-                            alt="food1">Mexian
-                    </li>
-                    <li class="nav-item">
-                        <img src="./images/salads.jpeg" height="50px" width="50px" class="rounded-5 p-1"
-                            alt="food1">Salads
-                    </li>
-                    <li class="nav-item d-block">
-                        <img src="./images/thai.png" height="55" width="55" class="rounded-5 p-1" alt="food1">
-                        Thai
-                    </li>
-                </ul>
-            </div>
-            <!-- Mobile Cuisines Carousel -->
-            <div class="d-sm-none px-3 mt-3">
-
-
-                <div id="cuisineCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-
-                        <!-- Slide 1 -->
-                        <div class="carousel-item active">
-                            <div class="d-flex justify-content-between text-center">
-                                <div>
-                                    <img src="./images/beverages.jpg" class="rounded-circle mb-1" width="55"
-                                        height="55">
-                                    <small>Beverages</small>
-                                </div>
-                                <div>
-                                    <img src="./images/pizza.jpg" class="rounded-circle mb-1" width="55" height="55">
-                                    <small>Pizza</small>
-                                </div>
-                                <div>
-                                    <img src="./images/chinese.avif" class="rounded-circle mb-1" width="55" height="55">
-                                    <small>Chinese</small>
-                                </div>
-                                <div>
-                                    <img src="./images/europian.avif" class="rounded-circle mb-1" width="55"
-                                        height="55">
-                                    <small>European</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2 -->
-                        <div class="carousel-item">
-                            <div class="d-flex justify-content-between text-center">
-                                <div>
-                                    <img src="./images/french.webp" class="rounded-circle mb-1" width="55" height="55">
-                                    <small>French</small>
-                                </div>
-                                <div>
-                                    <img src="./images/burger.webp" class="rounded-circle mb-1" width="55" height="55">
-                                    <small>Burger</small>
-                                </div>
-                                <div>
-                                    <img src="./images/lebanese.jpg" class="rounded-circle mb-1" width="55" height="55">
-                                    <small>Lebanese</small>
-                                </div>
-                                <div>
-                                    <img src="./images/thai.png" class="rounded-circle mb-1" width="55" height="55">
-                                    <small>Thai</small>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                        <li class="nav-item">
+                            <button class="btn text-light px-3" style="background-color: rgb(70,7,70);">
+                                Login
+                            </button>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="col border">
-                <nav class="bg-light border rounded px-3 py-2 d-none d-sm-block">
-                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
-
-
-                        <ul class="navbar-nav flex-row align-items-center gap-1">
-                            <li class="nav-item">
-                                <a class="nav-link p-0" href="#">Home</a>
-                            </li>
-                            <li class="nav-item text-muted">/</li>
-                            <li class="nav-item">
-                                <a class="nav-link p-0" href="#" style="color: rgb(59, 1, 59);"><b>Restaurants</b></a>
-                            </li>
-                        </ul>
+            
+            <!-- Mobile-only inputs in a row -->
+            <div class="d-block d-sm-none p-3 d-flex gap-1">
+                <input type="text" class="form-control rounded-5 w-75 bg-body-secondary" placeholder="Search Food">
+                <input type="text" class="form-control rounded-5 w-25 bg-body-secondary" placeholder="City">
+            </div>
 
 
-                        <ul class="navbar-nav flex-row align-items-center gap-3 fw-bold">
-                            <li class="nav-item">
-                                <a class="nav-link p-0" href="#">Sort</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link p-0" href="#">Ratings</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link p-0" href="#">Cost Per Person</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link p-0" href="#">Order Type</a>
-                            </li>
-                        </ul>
+        </nav>
+        <!-- sidebar container -->
+        <div class="container">
+            <div class="row gap-4">
+                <div class="col-3 border p-4 d-none d-sm-block">
+                    <h1 class="fs-2 fs-sm-3 fs-md-2">Cuisines</h1>
+                    <input type="text" placeholder="Search for cuisines"
+                        class="form-control mb-4 bg-body-secondary border-0">
+                    <ul class="navbar-nav mt-3 gap-3">
+                        <li class="nav-item">
+                            <img src="./images/beverages.jpg" height="50px" width="50px" class="rounded-5 p-1"
+                                alt="food1">Berverages
+                        </li>
+                        <li class="nav-item">
+                            <img src="./images/pizza.jpg" height="50px" width="50px" class="rounded-5 p-1" alt="food1">
+                            Pizza
+                        </li>
+                        <li class="nav-item">
+                            <img src="./images/chinese.avif" height="50px" width="50px" class="rounded-5 p-1"
+                                alt="food1">Chinese
+                        </li>
+                        <li class="nav-item">
+                            <img src="./images/europian.avif" height="50px" width="50px" class="rounded-5 p-1"
+                                alt="food1">Europian
+                        </li>
+                        <li class="nav-item">
+                            <img src="./images/french.webp" height="50px" width="50px" class="rounded-5 p-1"
+                                alt="food1">French
+                        </li>
+                        <li class="nav-item">
+                            <img src="./images/burger.webp" height="50px" width="50px" class="rounded-5 p-1"
+                                alt="food1">Burger
+                        </li>
+                        <li class="nav-item">
+                            <img src="./images/lebanese.jpg" height="50px" width="50px" class="rounded-5 p-1"
+                                alt="food1">Lebanese
+                        </li>
+                        <li class="nav-item">
+                            <img src="./images/mexian.avif" height="50px" width="50px" class="rounded-5 p-1"
+                                alt="food1">Mexian
+                        </li>
+                        <li class="nav-item">
+                            <img src="./images/salads.jpeg" height="50px" width="50px" class="rounded-5 p-1"
+                                alt="food1">Salads
+                        </li>
+                        <li class="nav-item d-block">
+                            <img src="./images/thai.png" height="55" width="55" class="rounded-5 p-1" alt="food1">
+                            Thai
+                        </li>
+                    </ul>
+                </div>
+                <!-- Mobile Cuisines Carousel -->
+                <div class="d-sm-none px-3 mt-3">
 
-                    </div>
-                </nav>
-                <!-- Mobile Carousel -->
-                <div class="container d-sm-none mt-3">
-                    <div id="offerCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                    <div id="cuisineCarousel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
 
                             <!-- Slide 1 -->
                             <div class="carousel-item active">
-                                <div class="card text-white border-0">
-                                    <img src="./images/banner1.jpg" class="card-img" alt="Food">
-                                    <div class="card-img-overlay d-flex flex-column p-3"
-                                        style="background: rgba(0,0,0,0.4);">
-
-                                        <span class="badge text-bg-success align-self-start">
-                                            OFFER
-                                        </span>
-
-                                        <div class="mt-auto">
-                                            <h3>50% OFF</h3>
-                                            <p class="small mb-1">
-                                                Exclusive Offer On AI Cuisines
-                                            </p>
-                                            <h6>ALBERTSONS</h6>
-                                        </div>
-
+                                <div class="d-flex justify-content-between text-center">
+                                    <div>
+                                        <img src="./images/beverages.jpg" class="rounded-circle mb-1" width="55"
+                                            height="55">
+                                        <small>Beverages</small>
+                                    </div>
+                                    <div>
+                                        <img src="./images/pizza.jpg" class="rounded-circle mb-1" width="55" height="55">
+                                        <small>Pizza</small>
+                                    </div>
+                                    <div>
+                                        <img src="./images/chinese.avif" class="rounded-circle mb-1" width="55" height="55">
+                                        <small>Chinese</small>
+                                    </div>
+                                    <div>
+                                        <img src="./images/europian.avif" class="rounded-circle mb-1" width="55"
+                                            height="55">
+                                        <small>European</small>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Slide 2 -->
                             <div class="carousel-item">
-                                <div class="card text-white border-0">
-                                    <img src="./images/banner2.webp" class="card-img" alt="Food">
-                                    <div class="card-img-overlay d-flex flex-column p-3"
-                                        style="background: rgba(0,0,0,0.4);">
+                                <div class="d-flex justify-content-between text-center">
+                                    <div>
+                                        <img src="./images/french.webp" class="rounded-circle mb-1" width="55" height="55">
+                                        <small>French</small>
+                                    </div>
+                                    <div>
+                                        <img src="./images/burger.webp" class="rounded-circle mb-1" width="55" height="55">
+                                        <small>Burger</small>
+                                    </div>
+                                    <div>
+                                        <img src="./images/lebanese.jpg" class="rounded-circle mb-1" width="55" height="55">
+                                        <small>Lebanese</small>
+                                    </div>
+                                    <div>
+                                        <img src="./images/thai.png" class="rounded-circle mb-1" width="55" height="55">
+                                        <small>Thai</small>
+                                    </div>
+                                </div>
+                            </div>
 
-                                        <span class="badge text-bg-success align-self-start">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col border">
+                    <nav class="bg-light border rounded px-3 py-2 d-none d-lg-block mt-2">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+
+
+                            <ul class="navbar-nav flex-row align-items-center gap-1">
+                                <li class="nav-item">
+                                    <a class="nav-link p-0" href="#">Home</a>
+                                </li>
+                                <li class="nav-item text-muted">/</li>
+                                <li class="nav-item">
+                                    <a class="nav-link p-0" href="#" style="color: rgb(59, 1, 59);"><b>Restaurants</b></a>
+                                </li>
+                            </ul>
+
+
+                            <ul class="navbar-nav flex-row align-items-center gap-3 fw-bold">
+                                <li class="nav-item">
+                                    <a class="nav-link p-0" href="#">Sort</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link p-0" href="#">Ratings</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link p-0" href="#">Cost Per Person</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link p-0" href="#">Order Type</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </nav>
+                    <!-- Mobile Carousel -->
+                    <div class="container d-sm-none mt-3">
+                        <div id="offerCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+
+                                <!-- Slide 1 -->
+                                <div class="carousel-item active">
+                                    <div class="card text-white border-0">
+                                        <img src="./images/banner1.jpg" class="card-img" alt="Food">
+                                        <div class="card-img-overlay d-flex flex-column p-3"
+                                            style="background: rgba(0,0,0,0.4);">
+
+                                            <span class="badge text-bg-success align-self-start">
+                                                OFFER
+                                            </span>
+
+                                            <div class="mt-auto">
+                                                <h3>50% OFF</h3>
+                                                <p class="small mb-1">
+                                                    Exclusive Offer On AI Cuisines
+                                                </p>
+                                                <h6>ALBERTSONS</h6>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="carousel-item">
+                                    <div class="card text-white border-0">
+                                        <img src="./images/new.jpg" class="card-img" alt="Food">
+                                        <div class="card-img-overlay d-flex flex-column p-3"
+                                            style="background: rgba(0,0,0,0.4);">
+
+                                            <span class="badge text-bg-success align-self-start">
+                                                OFFER
+                                            </span>
+
+                                            <div class="mt-auto">
+                                                <h3>50% OFF</h3>
+                                                <p class="small mb-1">
+                                                    Exclusive Offer On AI Cuisines
+                                                </p>
+                                                <h6>ALBERTSONS</h6>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3 -->
+                                <div class="carousel-item">
+                                    <div class="card text-white border-0">
+                                        <img src="./images/banner3.jpg" class="card-img" alt="Food">
+                                        <div class="card-img-overlay d-flex flex-column p-3"
+                                            style="background: rgba(0,0,0,0.4);">
+
+                                            <span class="badge text-bg-success align-self-start">
+                                                OFFER
+                                            </span>
+
+                                            <div class="mt-auto">
+                                                <h3>50% OFF</h3>
+                                                <p class="small mb-1">
+                                                    Exclusive Offer On AI Cuisines
+                                                </p>
+                                                <h6>ALBERTSONS</h6>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#offerCarousel"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#offerCarousel"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Desktop Cards -->
+                    <div class="container d-none d-sm-block mt-4">
+                        <div class="row g-3">
+
+                            <div class="col-md-4">
+                                <div class="card offer-card text-white border-0">
+
+                                    <img src="./images/banner1.jpg" class="card-img offer-card-img" alt="Food">
+
+                                    <div
+                                        class="card-img-overlay offer-overlay d-flex flex-column p-3 bg-dark bg-opacity-50">
+
+                                        <span class="badge text-bg-success align-self-start mb-2">
                                             OFFER
                                         </span>
 
                                         <div class="mt-auto">
-                                            <h3>50% OFF</h3>
-                                            <p class="small mb-1">
+                                            <h3 class="fs-6 fs-md-5 mb-1">50% OFF</h3>
+
+                                            <p class="small mb-1" style="
+                            display:-webkit-box;
+                            -webkit-line-clamp:2;
+                            -webkit-box-orient:vertical;
+                            overflow:hidden;">
                                                 Exclusive Offer On AI Cuisines
                                             </p>
-                                            <h6>ALBERTSONS</h6>
+
+                                            <h6 class="fs-6 mb-0">ALBERTSONS</h6>
                                         </div>
 
                                     </div>
+
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="card offer-card text-white border-0">
 
-                            <!-- Slide 3 -->
-                            <div class="carousel-item">
-                                <div class="card text-white border-0">
-                                    <img src="./images/banner3.jpg" class="card-img" alt="Food">
-                                    <div class="card-img-overlay d-flex flex-column p-3"
-                                        style="background: rgba(0,0,0,0.4);">
+                                    <img src="./images/new.jpg" class="card-img offer-card-img" alt="Food">
 
-                                        <span class="badge text-bg-success align-self-start">
+                                    <div
+                                        class="card-img-overlay offer-overlay d-flex flex-column p-3 bg-dark bg-opacity-50">
+
+                                        <span class="badge text-bg-success align-self-start mb-2">
                                             OFFER
                                         </span>
 
                                         <div class="mt-auto">
-                                            <h3>50% OFF</h3>
-                                            <p class="small mb-1">
+                                            <h3 class="fs-6 fs-md-5 mb-1">50% OFF</h3>
+
+                                            <p class="small mb-1" style="
+                            display:-webkit-box;
+                            -webkit-line-clamp:2;
+                            -webkit-box-orient:vertical;
+                            overflow:hidden;">
                                                 Exclusive Offer On AI Cuisines
                                             </p>
-                                            <h6>ALBERTSONS</h6>
+
+                                            <h6 class="fs-6 mb-0">ALBERTSONS</h6>
                                         </div>
 
                                     </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card offer-card text-white border-0">
+
+                                    <img src="./images/banner3.jpg" class="card-img offer-card-img" alt="Food">
+
+                                    <div
+                                        class="card-img-overlay offer-overlay d-flex flex-column p-3 bg-dark bg-opacity-50">
+
+                                        <span class="badge text-bg-success align-self-start mb-2">
+                                            OFFER
+                                        </span>
+
+                                        <div class="mt-auto">
+                                            <h3 class="fs-6 fs-md-5 mb-1">50% OFF</h3>
+
+                                            <p class="small mb-1" style="
+                            display:-webkit-box;
+                            -webkit-line-clamp:2;
+                            -webkit-box-orient:vertical;
+                            overflow:hidden;">
+                                                Exclusive Offer On AI Cuisines
+                                            </p>
+
+                                            <h6 class="fs-6 mb-0">ALBERTSONS</h6>
+                                        </div>
+
+                                    </div>
+
                                 </div>
                             </div>
 
                         </div>
-
-                        <!-- Controls -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#offerCarousel"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-
-                        <button class="carousel-control-next" type="button" data-bs-target="#offerCarousel"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
                     </div>
-                </div>
-                <!-- Desktop Cards -->
-                <div class="container d-none d-sm-block mt-4">
-                    <div class="row g-3">
 
-                        <div class="col-md-4">
-                            <div class="card text-white border-0 h-100">
-                                <img src="./images/banner1.jpg" class="card-img" alt="Food">
-                                <div class="card-img-overlay d-flex flex-column p-3"
-                                    style="background: rgba(0,0,0,0.4);">
 
-                                    <span class="badge text-bg-success align-self-start">
-                                        OFFER
-                                    </span>
+                    <div class="foods">
+                        <h1>Recomended Restaurants</h1>
+                        <div class="container my-4">
+                            <div class="row g-3">
 
-                                    <div class="mt-4">
-                                        <h3>50% OFF</h3>
-                                        <p class="small">
-                                            Exclusive Offer On AI Cuisines
-                                        </p>
-                                        <h6>ALBERTSONS</h6>
+                                <!-- Card 1 -->
+                                <div class="col-12 col-md-6">
+                                    <div class="card h-100 shadow-sm">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-4">
+                                                <img src="./images/item1.jpg" class="img-fluid rounded-start"
+                                                    alt="food-img">
+                                            </div>
+                                            <div class="col-8 gap-2">
+                                                <div class="card-body">
+                                                    <h5 class="card-title mb-1">Food Zone</h5>
+                                                    <p class="card-text text-muted mb-0">
+                                                        Coimbatore, Ukkadam
+                                                    </p>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                    <span>4.5</span>
+                                                    <span>2.75km</span>
+                                                    <span>Order : $500</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
-
                                 </div>
+
+                                <!-- Card 2 -->
+                                <div class="col-12 col-md-6">
+                                    <div class="card h-100 shadow-sm">
+                                        <div class="row g-0 align-items-center">
+
+                                            <div class="col-4">
+                                                <img src="./images/item2.jpg" class="img-fluid rounded-start"
+                                                    alt="food-img">
+                                            </div>
+
+                                            <div class="col-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title mb-1">Maha Food Bazar</h5>
+                                                    <p class="card-text text-muted mb-0">
+                                                        Coimbatore, Gandhipuram
+                                                    </p>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                    <span>4.3</span>
+                                                    <span>2.5km</span>
+                                                    <span>Order : $1500</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- card3 -->
+                                <div class="col-12 col-md-6">
+                                    <div class="card h-100 shadow-sm">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-4">
+                                                <img src="./images/item3.jpg" class="img-fluid rounded-start"
+                                                    alt="food-img">
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title mb-1">Superior Burger</h5>
+                                                    <p class="card-text text-muted mb-0">
+                                                        Coimbatore, Singanallur
+                                                    </p>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                    <span>4.8</span>
+                                                    <span>1.35km</span>
+                                                    <span>Order : $800</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 4 -->
+                                <div class="col-12 col-md-6">
+                                    <div class="card h-100 shadow-sm">
+                                        <div class="row g-0 align-items-center">
+
+                                            <div class="col-4">
+                                                <img src="./images/item4.jpg" class="img-fluid rounded-start"
+                                                    alt="food-img">
+                                            </div>
+
+                                            <div class="col-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title mb-1">Albertsons</h5>
+                                                    <p class="card-text text-muted mb-0">
+                                                        Coimbatore, Ramnathapuram
+                                                    </p>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                    <span>3.5</span>
+                                                    <span>2km</span>
+                                                    <span>Order : $200</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- card5 -->
+                                <div class="col-12 col-md-6">
+                                    <div class="card h-100 shadow-sm">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-4">
+                                                <img src="./images/item5.jpeg" class="img-fluid rounded-start"
+                                                    alt="food-img">
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title mb-1">Gelson's</h5>
+                                                    <p class="card-text text-muted mb-0">
+                                                        Coimbatore, Sulur
+                                                    </p>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                    <span>3.9</span>
+                                                    <span>1.5km</span>
+                                                    <span>Order : $999</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 6 -->
+                                <div class="col-12 col-md-6">
+                                    <div class="card h-100 shadow-sm">
+                                        <div class="row g-0 align-items-center">
+
+                                            <div class="col-4">
+                                                <img src="./images/item6.webp" class="img-fluid rounded-start"
+                                                    alt="food-img">
+                                            </div>
+
+                                            <div class="col-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title mb-1">Mint Fresh</h5>
+                                                    <p class="card-text text-muted mb-0">
+                                                        Coimbatore, Thudiyalure
+                                                    </p>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                    <span>4.7</span>
+                                                    <span>600m</span>
+                                                    <span>Order : $2500</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card 7 -->
+                                <div class="col-12 col-md-6">
+                                    <div class="card h-100 shadow-sm">
+                                        <div class="row g-0 align-items-center">
+                                            <div class="col-4">
+                                                <img src="./images/item7.jpeg" class="img-fluid rounded-start"
+                                                    alt="food-img">
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title mb-1">Heart Beat</h5>
+                                                    <p class="card-text text-muted mb-0">
+                                                        Coimbatore, Hopes
+                                                    </p>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                    <span>4.9</span>
+                                                    <span>1.2km</span>
+                                                    <span>Order : $1499</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 8 -->
+                                <div class="col-12 col-md-6">
+                                    <div class="card h-100 shadow-sm">
+                                        <div class="row g-0 align-items-center">
+
+                                            <div class="col-4">
+                                                <img src="./images/item8.avif" class="img-fluid rounded-start"
+                                                    alt="food-img">
+                                            </div>
+
+                                            <div class="col-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title mb-1">Rajastan Combo</h5>
+                                                    <p class="card-text text-muted mb-0">
+                                                        Coimbatore, Somanur
+                                                    </p>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                                    </svg>
+                                                    <span>4.5</span>
+                                                    <span>100m</span>
+                                                    <span>Order : $599</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card text-white border-0 h-100">
-                                <img src="./images/banner2.webp" height="165px" class="card-img" alt="Food">
-                                <div class="card-img-overlay d-flex flex-column p-3"
-                                    style="background: rgba(0,0,0,0.4);">
-
-                                    <span class="badge text-bg-success align-self-start">
-                                        OFFER
-                                    </span>
-
-                                    <div class="mt-auto">
-                                        <h3>50% OFF</h3>
-                                        <p class="small mb-1">
-                                            Exclusive Offer On AI Cuisines
-                                        </p>
-                                        <h6>ALBERTSONS</h6>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card text-white border-0 h-100">
-                                <img src="./images/banner3.jpg" class="card-img" alt="Food">
-                                <div class="card-img-overlay d-flex flex-column p-3"
-                                    style="background: rgba(0,0,0,0.4);">
-
-                                    <span class="badge text-bg-success align-self-start">
-                                        OFFER
-                                    </span>
-
-                                    <div class="mt-auto">
-                                        <h3>50% OFF</h3>
-                                        <p class="small mb-1">
-                                            Exclusive Offer On AI Cuisines
-                                        </p>
-                                        <h6>ALBERTSONS</h6>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
 
                     </div>
+
                 </div>
-
-
             </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+    </body>
 
-</html>
+    </html>

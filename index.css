@@ -1,0 +1,29 @@
+.offer-card {
+    height: 220px; /* adjust if needed */
+    overflow: hidden;
+}
+
+.offer-card-img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.offer-overlay {
+    inset: 0;
+}
+#sort:hover{
+    background-color: black;
+    color: white;
+}
+#rat:hover{
+    background-color: black;
+    color: white;
+}
+#cost:hover{
+    background-color: black;
+    color: white;
+}
+#order:hover{
+    background-color: black;
+    color: white;
+}
